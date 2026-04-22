@@ -1,5 +1,5 @@
 od = 10
-bpm=298
+bpm=220
 
 note_one_one = bpm * 1
 note_one_two = bpm * 2
@@ -29,7 +29,7 @@ for tempo in only_bpm_and_one_two:
     print("OD:", od)
     print("BPM:", bpm)
     if your_chance > 0:
-        print("To escape notelock you have to click earliest at", your_chance-1, "ms before perfect hit") # your_chance-1 cuz i cba to check how osu rounding works
+        print("To escape notelock you have to click earliest at", your_chance-1, "ms before the perfect hit") # your_chance-1 cuz i cba to check how osu rounding works
     else:
         print("Go kys")
-        print("To escape notelock you have to click earliest at", -your_chance+1, "ms after perfect hit")
+        print("To escape notelock you have to click earliest at", -your_chance+1, "ms AFTER the perfect hit")
