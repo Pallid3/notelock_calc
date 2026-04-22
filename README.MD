@@ -1,0 +1,1 @@
+This project is for figuring out how many millseconds you have to stall your click to not get notelocked on jump maps.
