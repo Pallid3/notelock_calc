@@ -1,5 +1,6 @@
-od = 10
-bpm=220
+od = 9.4
+bpm = 260
+rhythm = 2 # Choose the rhythm. For example 1/1, 1/2th, 1/3rd or 1/4th.
 
 note_one_one = bpm * 1
 note_one_two = bpm * 2
@@ -7,8 +8,6 @@ note_one_three = bpm * 3
 note_one_four = bpm * 4
 
 notes = [note_one_one, note_one_two, note_one_three, note_one_four]
-
-only_bpm_and_one_two = [note_one_two] # yeah I asked gpt to put my variables in list, and now this is running in main function, rest of the code is not vibecoded.
 
 def calc_od50(od):
     od50 = 200 - (10 * od)
@@ -20,7 +19,8 @@ def calc(tempo):
     time_between_notes = round(time_between_notes)
     return notes_per_second, time_between_notes
 
-for tempo in only_bpm_and_one_two:
+def main_function(rhythm):
+    tempo = notes[rhythm-1]
     notes_per_second, time_between_notes = calc(tempo)
     hit_window = calc_od50(od)
     your_chance = time_between_notes - hit_window
@@ -33,3 +33,5 @@ for tempo in only_bpm_and_one_two:
     else:
         print("Go kys")
         print("To escape notelock you have to click earliest at", -your_chance+1, "ms AFTER the perfect hit")
+
+main_function(rhythm)
