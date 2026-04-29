@@ -1,6 +1,31 @@
-od = 9.4
-bpm = 260
-rhythm = 2 # Choose the rhythm. For example 1/1, 1/2th, 1/3rd or 1/4th.
+# od = 9.5
+# bpm = 240
+# rhythm = 2 # Choose the rhythm. For example 1/1, 1/2th, 1/3rd or 1/4th.
+
+def inputfloat(no_way):
+    while True:
+        try:
+            a = float(input(no_way))
+            break
+        except ValueError:
+            print("you suck ass")
+    return a
+
+def inputrhythm(no_way):
+    while True:
+        try:
+            a = int(input(no_way))
+            if a > 4:
+                print("you suck ass, big number does not = funny")
+                continue
+            break
+        except ValueError:
+            print("you suck ass")
+    return a
+
+od = inputfloat("od: ")
+bpm = inputfloat("bpm: ")
+rhythm = inputrhythm("rhythm: ")
 
 note_one_one = bpm * 1
 note_one_two = bpm * 2
@@ -26,8 +51,8 @@ def main_function(rhythm):
     your_chance = time_between_notes - hit_window
     # print("notes_per_second:", notes_per_second)
     # print("time_between_notes:", time_between_notes, "ms")
-    print("OD:", od)
-    print("BPM:", bpm)
+    # print("OD:", od)
+    # print("BPM:", bpm)
     if your_chance > 0:
         print("To escape notelock you have to click earliest at", your_chance-1, "ms before the perfect hit") # your_chance-1 cuz i cba to check how osu rounding works
     else:
